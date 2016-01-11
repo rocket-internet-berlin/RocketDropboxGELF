@@ -1,0 +1,7 @@
+# /etc/cron.d/dropbox-gelf: crontab entries for the anacron package
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+BASE=/opt/dropbox-gelf
+
+30 * * * *   nobody    ${BASE}/dbgelf-venv/bin/python3 ${BASE}/dropbox-gelf.py ${BASE}/dropbox-gelf.ini
