@@ -98,13 +98,13 @@ if __name__ == '__main__':
                            source=gelf_source)
     elif gelf_protocol == 'tcp':
         h = GelfTcpHandler(host=gelf_host, port=gelf_port,
-                           source=gelf_source, compress=False)
+                           source=gelf_source)
     elif gelf_protocol == 'tls':
         tls_cafile = config.get('tls_cafile',
                                 '/etc/ssl/certs/ca-certificates.crt')
         h = GelfTlsHandler(host=gelf_host, port=gelf_port,
-                           source=gelf_source, compress=False,
-                           validate=True, ca_certs=tls_cafile)
+                           source=gelf_source, validate=True,
+                           ca_certs=tls_cafile)
     else:
         sys.exit('Unknown protocol')
     logger = logging.getLogger()
