@@ -16,7 +16,7 @@ Then, an access token can be generated in the "Generated Access Token" section o
 
 ## Script setup
 
-The `dropbox-gelf.conf.ini` sample configuration file in this repository has to be customized for your Dropbox account and Graylog setup. Make sure it is *NOT* world-readable (as it contains a private token).
+The `dropbox-gelf.conf.ex` sample configuration file in this repository has to be customized for your Dropbox account and Graylog setup. Make sure it is *NOT* world-readable (as it contains a private token).
 
 ```
 cp dropbox-gelf.conf.ex dropbox-gelf.ini
