@@ -47,9 +47,9 @@ def dropbox_to_graylog(token, start_ts, end_ts, url=API_ENDPOINT,
             import pprint
             pprint.pprint(http_resp.json())
         if http_resp.status_code != 200:
-            print(http_resp.text)
-            sys.exit('API call failed')
+            handler.flush()
             logging.shutdown()
+            sys.exit('API call failed')
         json_resp = http_resp.json()
         events = json_resp.get('events', [])
         has_more = json_resp.get('has_more', False)
