@@ -4,7 +4,7 @@
 """
 A Dropbox-to-GELF audit logs injector
 :copyright: (c) 2015 Rocket Internet SE
-:license: MIT, see LICENSE for more details.
+:license: GPLv3+, see LICENSE for more details.
 """
 
 __author__ = "Luca Bruno"
