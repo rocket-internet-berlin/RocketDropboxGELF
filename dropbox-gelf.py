@@ -21,7 +21,6 @@ from pygelf import GelfTcpHandler, GelfUdpHandler, GelfTlsHandler
 import requests
 
 API_ENDPOINT = 'https://api.dropbox.com/1/team/log/get_events'
-_dg_debug = False
 
 
 def dropbox_to_graylog(token, start_ts, end_ts, url=API_ENDPOINT,
@@ -86,7 +85,7 @@ if __name__ == '__main__':
     timespan = int(config.get('timespan', 3600))  # in seconds
     end_ts = time.time() * 1000
     start_ts = end_ts - (timespan * 1000)
-    _dg_debug = bool(config.get('debug', None))
+    _dg_debug = config.getboolean('debug', False)
     # Setup GELF logger
     h = None
     gelf_host = config.get('host', '127.0.0.1')
