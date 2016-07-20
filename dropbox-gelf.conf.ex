@@ -1,4 +1,6 @@
 [main]
+# Enable debug: true|false 
+debug = False
 # For token creation see
 # https://www.dropbox.com/developers-v1/business
 token = YOUR_ACCESS_TOKEN_HERE
