@@ -8,6 +8,7 @@ Dropbox Business API (v1) offers [an endpoint](https://www.dropbox.com/developer
 
 This python3 script provides a log injector to fetch events from Dropbox API and send them to Graylog via GELF (UDP, TCP or TLS).
 
+
 ## Dropbox setup
 
 You have to first setup a custom new application in your Dropbox business account. You can read [Dropbox doc](https://www.dropbox.com/developers-v1/business) on how to do it.
@@ -36,3 +37,7 @@ sudo editor /etc/cron.d/dropbox-gelf
 ```
 
 A cronjob template is provided in `dropbox-gelf.cron`, running the script from `/opt/dropbox-gelf` as user `nobody` every 60 minutes. Please make sure your cron interval and `timespan` parameter match, otherwise *you will lose audit logs*. 
+
+
+### Dropbox Business API v2 update (2016-07-20)
+Dropbox has not made available yet an audit endpoint for the v2 API. The existing v2 documentation suggests to keep using the v1 endpoint (/1/team/log/get_events). Ref: https://www.dropbox.com/developers/reference/migration-guide
